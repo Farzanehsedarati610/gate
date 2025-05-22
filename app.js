@@ -11,7 +11,7 @@ document.getElementById('transferForm').addEventListener('submit', async functio
     }
 
     try {
-        const response = await fetch('https://yourbankendpoint:yourport/transfer', { // Change the URL and port as needed
+        const response = await fetch('http://localhost:80/transfer', { // Change the URL and port as needed
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
