@@ -2,6 +2,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const path = require("path"); // Import path module
+const fs = require('fs');
+const logFile = path.join(__dirname, 'logs', 'server.log');
+fs.appendFileSync(logFile, `Server started on port 80 at ${new Date().toISOString()}\n`);
+
+// Serve static files from the correct directory
+app.use(express.static(path.join(__dirname, "public"))); 
 const PORT = 80; // HTTP port
 
 app.use(bodyParser.json());
